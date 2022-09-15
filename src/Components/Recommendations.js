@@ -1,9 +1,15 @@
-const Recommendations = () => {
+const Recommendations = ({addProgramme}) => {
     return (
+        
         <div>
-            <h1>Recommend a programme</h1>
+            <h1>Add programme to list</h1>
         <form>
-            <input type="text"></input>
+            <input id="programmeInput" type="text"></input>
+            <input onClick={(e) => {
+                e.preventDefault()
+                const programmeToAdd = document.getElementById("programmeInput")
+                addProgramme(programmeToAdd.value)
+            }} type="submit" value="Add"></input>
         </form>
         </div>
     )
